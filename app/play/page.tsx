@@ -125,7 +125,7 @@ const PlayPage = () => {
         <button
           className={classNames(
             playing ? "btn-outline" : "btn-primary",
-            "transition-all duration-300 flex flex-row gap-2 items-center justify-center"
+            "pattern transition-all duration-300 flex flex-row gap-2 items-center justify-center"
           )}
           onClick={playGame}
           disabled={playing}

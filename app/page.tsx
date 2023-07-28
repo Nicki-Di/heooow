@@ -27,7 +27,9 @@ const HomePage = () => {
       >
         <a
           href={"/play"}
-          className={"btn-primary flex flex-row items-center justify-center"}
+          className={
+            "pattern btn-primary flex flex-row items-center justify-center"
+          }
           onMouseEnter={() => setMoving(true)}
           onMouseLeave={() => setMoving(false)}
         >

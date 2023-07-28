@@ -124,7 +124,7 @@ const ResultPage = () => {
 
           <Link
             href={"/play"}
-            className={"z-20 btn-primary flex flex-row items-center gap-2"}
+            className={"z-20 pattern btn-primary flex flex-row items-center gap-2"}
             shallow={false}
           >
             <p>Try again</p>
