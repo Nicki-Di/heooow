@@ -2,11 +2,8 @@ import { Prisma } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 import { LeaderBoardType } from "@/globals/types";
 import { prisma } from "@/globals/prisma";
-import { revalidatePath } from "next/cache";
 
 export async function GET(request: NextRequest) {
-  revalidatePath("/result");
-
   try {
     const result = await prisma.leaderBoard.findMany({
       take: 10,
