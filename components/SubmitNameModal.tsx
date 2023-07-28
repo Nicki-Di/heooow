@@ -13,6 +13,12 @@ type Props = {
 const SubmitNameModal = ({ isOpen, setIsOpen, hasWon }: Props) => {
   const router = useRouter();
   const [name, setName] = useState("");
+  const onSubmit = () => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("hasWon", String(hasWon));
+    router.push("/result");
+  };
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -72,16 +78,18 @@ const SubmitNameModal = ({ isOpen, setIsOpen, hasWon }: Props) => {
                   }
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      onSubmit();
+                    }
+                  }}
                 />
                 <button
                   disabled={name.length === 0}
                   className={
                     "pattern btn-primary flex flex-row items-center justify-center"
                   }
-                  onClick={async () => {
-                    localStorage.setItem("name", name);
-                    await router.push(`/result?hasWon=${hasWon}`);
-                  }}
+                  onClick={onSubmit}
                 >
                   <p>Submit</p>
                   <Emoji src={"/emojis/arm.png"} alt={"arm emoji"} />

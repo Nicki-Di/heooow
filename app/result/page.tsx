@@ -1,14 +1,18 @@
 "use client";
-import React, { useState } from "react";
-import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
 import animationData from "@/public/lottie/paper-splash.json";
-import { useSearchParams } from "next/navigation";
 import LeaderBoard from "@/components/LeaderBoard";
 import Link from "next/link";
 import Emoji from "@/components/Emoji";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"));
 
 const ResultPage = () => {
-  const queryParams = useSearchParams();
+  const hasWon = localStorage.getItem("hasWon");
+  useEffect(() => {
+    localStorage.setItem("hasWon", "");
+  }, []);
   const [copied, setCopied] = useState(false);
 
   return (
@@ -30,7 +34,7 @@ const ResultPage = () => {
           "flex flex-col justify-center items-center w-full pb-10 -mt-10 short:mt-0"
         }
       >
-        {queryParams.get("hasWon") === "true" ? (
+        {hasWon === "true" ? (
           <div
             className={
               "flex flex-col-reverse sm:flex-row items-center justify-center gap-2 sm:gap-8 "

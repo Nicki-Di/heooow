@@ -8,7 +8,7 @@ import Emoji from "@/components/Emoji";
 const PlayPage = () => {
   const router = useRouter();
   const [playing, setPlaying] = useState(false);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [hasWon, setHasWon] = useState(false);
   const audio = new Audio("/sound2.5.mp3");
   audio.loop = true;
