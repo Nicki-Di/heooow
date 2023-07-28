@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Emoji from "@/components/Emoji";
 
 const top10 = [
   { name: "Nick", score: 98 },
@@ -18,7 +18,6 @@ const top10 = [
   { name: "Brad pitt", score: 49 },
 ];
 
-
 const LeaderBoard = () => {
   return (
     <div
@@ -26,7 +25,7 @@ const LeaderBoard = () => {
         "hidden lg:flex flex-col items-center absolute top-[20%] left-8  bg-modal-bg h-fit text-g-100 rounded-3xl p-2 pt-6 "
       }
     >
-      <img src={"/icons/Trophy.png"} alt={"trophy icon"} className={"w-10"} />
+      <img src={"/emojis/trophy.png"} alt={"trophy emoji"} className={"w-10"} />
       <p className={"h5 "}>TOP 10</p>
       <p className={"p-big mb-4 "}>Leaderboard</p>
       <div className={"bg-g-400 rounded-3xl"}>
@@ -39,27 +38,15 @@ const LeaderBoard = () => {
           >
             <div className={"flex flex-row gap-1 items-center "}>
               {index === 0 && (
-                <img
-                  src={"/icons/Gold.png"}
-                  alt={"Gold icon"}
-                  className={"w-6 "}
-                />
+                <Emoji src={"/emojis/gold.png"} alt={"gold emoji"} />
               )}
 
               {index === 1 && (
-                <img
-                  src={"/icons/Silver.png"}
-                  alt={"Silver icon"}
-                  className={"w-6 "}
-                />
+                <Emoji src={"/emojis/silver.png"} alt={"silver emoji"} />
               )}
 
               {index === 2 && (
-                <img
-                  src={"/icons/Bronze.png"}
-                  alt={"Bronze icon"}
-                  className={"w-6 "}
-                />
+                <Emoji src={"/emojis/bronze.png"} alt={"bronze emoji"} />
               )}
 
               <p

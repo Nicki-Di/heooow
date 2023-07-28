@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Emoji from "@/components/Emoji";
 
 const HomePage = () => {
   const [moving, setMoving] = useState(false);
@@ -31,12 +32,10 @@ const HomePage = () => {
           onMouseLeave={() => setMoving(false)}
         >
           <p>Bring it on</p>
-          <Image
-            src={"/icons/Fire.png"}
-            width={"24"}
-            height={"24"}
+          <Emoji
+            src={"/emojis/fire.png"}
+            alt={"fire emoji"}
             className={moving ? "animate-SmallMove" : ""}
-            alt={"fire icon"}
           />
         </a>
         <div className={"relative w-full sm:w-3/4 md:w-1/3 xl:w-1/4 h-[10rem]"}>

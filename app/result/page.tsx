@@ -5,6 +5,7 @@ import animationData from "@/public/lottie/paper-splash.json";
 import { useSearchParams } from "next/navigation";
 import LeaderBoard from "@/components/LeaderBoard";
 import Link from "next/link";
+import Emoji from "@/components/Emoji";
 
 const ResultPage = () => {
   const queryParams = useSearchParams();
@@ -49,7 +50,15 @@ const ResultPage = () => {
               alt={""}
             />
             <div className={"flex flex-col h6"}>
-              <p className={"text-success "}>Awesome! 🤟🏻</p>
+              <div></div>
+              <div
+                className={
+                  "flex flex-row items-center justify-center sm:justify-start gap-2"
+                }
+              >
+                <p className={"text-success "}>Awesome!</p>
+                <Emoji src={"/emojis/rock.png"} alt={"rock emoji"} />
+              </div>
               <p className={"text-g-100"}>You nailed it buddy</p>
             </div>
           </div>
@@ -66,7 +75,17 @@ const ResultPage = () => {
             />
             <div className={"flex flex-col h6"}>
               <p className={"text-failure text-center sm:text-left"}>Really?</p>
-              <p className={"text-g-100 "}>It was Too easy 🤧</p>
+              <div
+                className={
+                  "flex flex-row items-center justify-center sm:justify-start gap-2"
+                }
+              >
+                <p className={"text-g-100 "}>It was Too easy</p>
+                <Emoji
+                  src={"/emojis/sneezingFace.png"}
+                  alt={"sneezingFace emoji"}
+                />
+              </div>
             </div>
           </div>
         )}
@@ -76,17 +95,28 @@ const ResultPage = () => {
           id={"ground"}
         />
         <button
-          className={"btn-outline my-6 z-10 glow-on-hover"}
+          className={
+            "btn-outline my-6 flex flex-row items-center gap-2 z-10 glow-on-hover"
+          }
           onClick={async () => {
             setCopied(true);
             await navigator.clipboard.writeText(window.location.origin);
           }}
         >
-          <p>{copied ? "Link Copied! 📑" : "Share with friends 🔗"}</p>
+          <p>{copied ? "Link Copied!" : "Share with friends"}</p>
+          {copied ? (
+            <Emoji src={"/emojis/copy.png"} alt={"copy emoji"} />
+          ) : (
+            <Emoji src={"/emojis/link.png"} alt={"link emoji"} />
+          )}
         </button>
 
-        <Link href={"/play"} className={"btn-primary"}>
-          Try again 👊🏻
+        <Link
+          href={"/play"}
+          className={"btn-primary flex flex-row items-center gap-2"}
+        >
+          <p>Try again</p>
+          <Emoji src={"/emojis/fist.png"} alt={"fist emoji"} />
         </Link>
       </div>
     </div>

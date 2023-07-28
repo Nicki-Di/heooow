@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import SubmitNameModal from "@/components/SubmitNameModal";
 import { classNames } from "@/utils/functions";
-import Image from "next/image";
+import Emoji from "@/components/Emoji";
 
 const PlayPage = () => {
   const router = useRouter();
@@ -99,12 +99,7 @@ const PlayPage = () => {
           disabled={playing}
         >
           <p>{playing ? "You're playing..." : "Start"}</p>
-          <Image
-            src={"/icons/PartyingFace.png"}
-            alt={"party face icon"}
-            width={"24"}
-            height={"24"}
-          />
+          <Emoji src={"/emojis/partyingFace.png"} alt={"party face emoji"} />
         </button>
       </div>
       <SubmitNameModal isOpen={open} setIsOpen={setOpen} hasWon={hasWon} />
