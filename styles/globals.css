@@ -147,7 +147,7 @@ a {
 
 @layer components {
   .btn-primary {
-    @apply cursor-pointer w-11/12 sm:w-auto border-2 border-transparent bg-p-100 rounded-2xl px-16 py-1.5 gap-1 text-g-100 p-big disabled:cursor-not-allowed ;
+    @apply cursor-pointer w-11/12 sm:w-auto border-2 border-transparent bg-p-100 rounded-2xl px-16 py-1.5 gap-1 text-g-100 p-big disabled:cursor-not-allowed disabled:opacity-30 transition-all duration-300 ;
   }
 
   .btn-outline {

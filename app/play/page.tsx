@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import SubmitNameModal from "@/components/SubmitNameModal";
 import { classNames } from "@/utils/functions";
@@ -10,13 +10,16 @@ const PlayPage = () => {
   const [playing, setPlaying] = useState(false);
   const [open, setOpen] = useState(false);
   const [hasWon, setHasWon] = useState(false);
-  const audio = new Audio("/sound2.5.mp3");
-  audio.loop = true;
-  document.body.onkeyup = function (e) {
-    if (e.key === " " || e.code === "Space") {
-      playGame();
-    }
-  };
+  let audio: HTMLAudioElement;
+  useEffect(() => {
+    audio = new Audio("/sound2.5.mp3");
+    audio.loop = true;
+    document.body.onkeyup = function (e) {
+      if (e.key === " " || e.code === "Space") {
+        playGame();
+      }
+    };
+  }, []);
 
   const playGame = () => {
     if (!playing) {
@@ -46,6 +49,16 @@ const PlayPage = () => {
       }, 8000);
     }
   };
+
+  const [timer, setTimer] = useState(8);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (playing) setTimer((current) => current - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [playing]);
 
   return (
     <div
@@ -87,7 +100,7 @@ const PlayPage = () => {
             playing ? "opacity-0" : "",
             "transition-all duration-300 hidden sm:block max-w-[12rem] mb-4"
           )}
-          alt={""}
+          alt={"Also you can use the space bar"}
         />
 
         <button
@@ -98,8 +111,10 @@ const PlayPage = () => {
           onClick={playGame}
           disabled={playing}
         >
-          <p>{playing ? "You're playing..." : "Start"}</p>
-          <Emoji src={"/emojis/partyingFace.png"} alt={"party face emoji"} />
+          <p>{playing ? timer : "Start"}</p>
+          {!playing && (
+            <Emoji src={"/emojis/partyingFace.png"} alt={"party face emoji"} />
+          )}
         </button>
       </div>
       <SubmitNameModal isOpen={open} setIsOpen={setOpen} hasWon={hasWon} />

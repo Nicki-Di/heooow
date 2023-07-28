@@ -13,10 +13,17 @@ type Props = {
 const SubmitNameModal = ({ isOpen, setIsOpen, hasWon }: Props) => {
   const router = useRouter();
   const [name, setName] = useState("");
-  const onSubmit = () => {
-    localStorage.setItem("name", name);
-    localStorage.setItem("hasWon", String(hasWon));
+
+  const onClose = () => {
     router.push("/result");
+  }
+
+  const onSubmit = () => {
+    if (name) {
+      localStorage.setItem("name", name);
+      localStorage.setItem("hasWon", String(hasWon));
+      router.push("/result");
+    }
   };
 
   return (
@@ -64,7 +71,7 @@ const SubmitNameModal = ({ isOpen, setIsOpen, hasWon }: Props) => {
                     height={"24"}
                     alt={"close icon"}
                     className={"cursor-pointer"}
-                    onClick={() => setIsOpen(false)}
+                    onClick={onClose}
                   />
                 </div>
                 <p className={"p-small text-left "}>

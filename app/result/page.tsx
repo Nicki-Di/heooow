@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import animationData from "@/public/lottie/paper-splash.json";
 import LeaderBoard from "@/components/LeaderBoard";
 import Link from "next/link";
@@ -9,11 +9,12 @@ import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"));
 
 const ResultPage = () => {
-  const hasWon = localStorage.getItem("hasWon");
-  useEffect(() => {
-    localStorage.setItem("hasWon", "");
-  }, []);
   const [copied, setCopied] = useState(false);
+  const hasWon = useRef<string>("")
+  useEffect(() => {
+    hasWon.current = localStorage.getItem("hasWon") ?? "false";
+    localStorage.removeItem("hasWon");
+  }, []);
 
   return (
     <div
@@ -34,7 +35,7 @@ const ResultPage = () => {
           "flex flex-col justify-center items-center w-full pb-10 -mt-10 short:mt-0"
         }
       >
-        {hasWon === "true" ? (
+        {hasWon.current === "true" ? (
           <div
             className={
               "flex flex-col-reverse sm:flex-row items-center justify-center gap-2 sm:gap-8 "
