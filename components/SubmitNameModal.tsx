@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import { useRouter } from "next/navigation";
-import {Dialog, Transition} from '@headlessui/react'
-import {Fragment, useState} from 'react'
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { Dialog, Transition } from "@headlessui/react";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import Image from "next/image";
 
 type Props = {
-  isOpen: boolean,
-  setIsOpen: (open: boolean) => void
-  hasWon: boolean
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+  hasWon: boolean;
 };
 
 const SubmitNameModal = ({isOpen, setIsOpen, hasWon} : Props) => {
@@ -15,7 +15,7 @@ const SubmitNameModal = ({isOpen, setIsOpen, hasWon} : Props) => {
   const [name, setName] = useState("")
   return (
     <Transition appear show = {isOpen} as = {Fragment}>
-      <Dialog as = "div" className = "relative z-10 flex flex-row" onClose = {() => null}>
+      <Dialog as = "div" className = "relative z-20 flex flex-row" onClose = {() => null}>
         <Transition.Child
           as = {Fragment}
           enter = "ease-out duration-300"
@@ -25,7 +25,7 @@ const SubmitNameModal = ({isOpen, setIsOpen, hasWon} : Props) => {
           leaveFrom = "opacity-100"
           leaveTo = "opacity-0"
         >
-          <div className = {"fixed inset-0 bg-white  backdrop-blur-2xl "}/>
+          <div className = {"fixed inset-0 backdrop-blur-sm"}/>
         </Transition.Child>
 
         <div className = {"fixed inset-x-0 bottom-0 sm:inset-0 overflow-y-auto "}>
@@ -51,21 +51,26 @@ const SubmitNameModal = ({isOpen, setIsOpen, hasWon} : Props) => {
                   Yeaaaah!</p>
                 <input
                   type = {"text"}
-                  placeholder = {"Are you David beckham?"}
+                  placeholder = {"Are you David Beckham?"}
                   className = {"bg-input-bg mt-6 mb-3 rounded-2xl p-3 focus:ring-0 focus:outline-0"}
                   value = {name}
                   onChange = {(e) => setName(e.target.value)}
                 />
                 <button
                   disabled = {name.length === 0}
-                  className = {"pattern bg-p-100 flex flex-row items-center justify-center rounded-2xl px-16 py-2 gap-1 text-g-100 p-big " + (name ? "cursor-pointer" : "cursor-not-allowed")}
+                  className = {"pattern btn-primary flex flex-row items-center justify-center"}
                   onClick = {async () => {
                     localStorage.setItem("name", name)
                     await router.push(`/result?hasWon=${hasWon}`);
                   }}
                 >
                   <p>Submit</p>
-                  <img src = {"/icons/Arm.png"} alt = {"arm icon"} className = {"w-6 h-6 "}/>
+                  <Image
+                    src={"/icons/Arm.png"}
+                    width={"24"}
+                    height={"24"}
+                    alt={"arm icon"}
+                  />
                 </button>
 
 

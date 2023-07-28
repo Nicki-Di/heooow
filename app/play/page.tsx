@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import SubmitNameModal from "@/components/SubmitNameModal";
+import { classNames } from "@/utils/functions";
+import Image from "next/image";
 
 const PlayPage = () => {
   const router = useRouter();
   const [playing, setPlaying] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [hasWon, setHasWon] = useState(false);
   const audio = new Audio("/sound2.5.mp3");
   audio.loop = true;
@@ -21,12 +21,11 @@ const PlayPage = () => {
   const playGame = () => {
     if (!playing) {
       audio.loop = true;
-      const character = document
-        .getElementById("character")
-        ?.getBoundingClientRect().bottom ?? 0;
-      const ground = document
-        .getElementById("ground")
-        ?.getBoundingClientRect().y ?? 0;
+      const character =
+        document.getElementById("character")?.getBoundingClientRect().bottom ??
+        0;
+      const ground =
+        document.getElementById("ground")?.getBoundingClientRect().y ?? 0;
       audio.play();
       setPlaying(true);
 
@@ -42,7 +41,7 @@ const PlayPage = () => {
         if (!localStorage.getItem("name")) {
           setOpen(true);
         } else {
-          await router.push(`/result?hasWon=${ground - character < 45}`)
+          await router.push(`/result?hasWon=${ground - character < 45}`);
         }
       }, 8000);
     }
@@ -59,6 +58,7 @@ const PlayPage = () => {
         alt={"logo"}
         className={"max-w-lg sm:max-w-2xl -mt-24 "}
       />
+
       <div
         className={"flex flex-col justify-center items-center w-full pb-10 "}
       >
@@ -83,23 +83,27 @@ const PlayPage = () => {
         />
         <img
           src={"/tip.png"}
-          className={"hidden sm:block max-w-[12rem] mb-4"}
+          className={classNames(
+            playing ? "opacity-0" : "",
+            "transition-all duration-300 hidden sm:block max-w-[12rem] mb-4"
+          )}
           alt={""}
         />
 
         <button
-          className={
-            "pattern w-11/12 sm:w-auto bg-p-100 flex flex-row items-center justify-center rounded-2xl px-16 py-2 gap-1 text-g-100 p-big " +
-            (playing ? "cursor-not-allowed" : " cursor-pointer")
-          }
+          className={classNames(
+            playing ? "btn-outline" : "btn-primary",
+            "transition-all duration-300 flex flex-row gap-2 items-center justify-center"
+          )}
           onClick={playGame}
           disabled={playing}
         >
-          <p>Start</p>
-          <img
+          <p>{playing ? "You're playing..." : "Start"}</p>
+          <Image
             src={"/icons/PartyingFace.png"}
             alt={"party face icon"}
-            className={"w-6 h-6 "}
+            width={"24"}
+            height={"24"}
           />
         </button>
       </div>

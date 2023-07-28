@@ -26,13 +26,11 @@ const HomePage = () => {
       >
         <a
           href={"/play"}
-          className={
-            "pattern bg-p-100 flex flex-row items-center rounded-2xl px-12 py-2 gap-1 text-g-100 p-big"
-          }
+          className={"btn-primary flex flex-row items-center justify-center"}
           onMouseEnter={() => setMoving(true)}
           onMouseLeave={() => setMoving(false)}
         >
-          <p> Bring it on</p>
+          <p>Bring it on</p>
           <Image
             src={"/icons/Fire.png"}
             width={"24"}

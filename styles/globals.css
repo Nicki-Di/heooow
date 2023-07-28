@@ -144,3 +144,14 @@ a {
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+@layer components {
+  .btn-primary {
+    @apply cursor-pointer w-11/12 sm:w-auto border-2 border-transparent bg-p-100 rounded-2xl px-16 py-1.5 gap-1 text-g-100 p-big disabled:cursor-not-allowed ;
+  }
+
+  .btn-outline {
+    @apply cursor-pointer w-11/12 sm:w-auto border-2 border-p-100 rounded-2xl px-12 py-1.5 text-g-100 p-big disabled:cursor-not-allowed
+  }
+
+}
