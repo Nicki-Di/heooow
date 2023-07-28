@@ -1,0 +1,19 @@
+# just a copy of the main docker-compose
+version: "3.8"
+services:
+  # Docker connection string: postgres://postgres:postgres@localhost:5432/
+  heooow:
+    container_name: "heooow"
+    hostname: "heooow"
+    restart: always
+    env_file: .env
+    build:
+      context: .
+    volumes:
+      - heooow-volume:./prisma/dev.db
+    ports:
+      # systemPort:containerPort
+      - "3000:3000"
+
+volumes:
+  heooow-volume:
