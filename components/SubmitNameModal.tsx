@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { useRouter } from "next/navigation";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -6,23 +6,29 @@ import Emoji from "@/components/Emoji";
 
 type Props = {
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-  hasWon: boolean;
+  name: string;
+  setName: (name: string) => void;
+  score: number;
+  goToResultPage: (name: string, score: number) => Promise<void>;
 };
 
-const SubmitNameModal = ({ isOpen, setIsOpen, hasWon }: Props) => {
+const SubmitNameModal = ({
+  isOpen,
+  name,
+  setName,
+  score,
+  goToResultPage,
+}: Props) => {
   const router = useRouter();
-  const [name, setName] = useState("");
 
   const onClose = () => {
     router.push("/result");
-  }
+  };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (name) {
-      localStorage.setItem("name", name);
-      localStorage.setItem("hasWon", String(hasWon));
-      router.push("/result");
+      localStorage.setItem("name", name)
+      await goToResultPage(name, score);
     }
   };
 

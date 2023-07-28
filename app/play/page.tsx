@@ -9,7 +9,9 @@ const PlayPage = () => {
   const router = useRouter();
   const [playing, setPlaying] = useState(false);
   const [open, setOpen] = useState(false);
-  const [hasWon, setHasWon] = useState(false);
+  const [name, setName] = useState("");
+  const [finalScore, setFinalScore] = useState(0);
+
   let audio: HTMLAudioElement;
   useEffect(() => {
     audio = new Audio("/sound2.5.mp3");
@@ -20,6 +22,27 @@ const PlayPage = () => {
       }
     };
   }, []);
+
+  const [timer, setTimer] = useState(8);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (playing) setTimer((current) => current - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [playing]);
+
+  const goToResultPage = async (name: string, score: number) => {
+    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/leaderBoard`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, score }),
+    });
+    router.push("/result");
+  };
 
   const playGame = () => {
     if (!playing) {
@@ -32,33 +55,26 @@ const PlayPage = () => {
       audio.play();
       setPlaying(true);
 
-      console.log(ground - character);
-
-      if (ground - character < 45) {
-        setHasWon(true);
-      }
       setTimeout(async () => {
         setPlaying(false);
         audio.loop = false;
+        let hasWon = ground - character < 45;
+        let score = 100 - Math.floor(ground - character);
+        localStorage.setItem("hasWon", String(hasWon));
+        setFinalScore(score);
 
-        if (!localStorage.getItem("name")) {
-          setOpen(true);
+        if (hasWon) {
+          if (localStorage.getItem("name")) {
+            await goToResultPage(localStorage.getItem("name") ?? "", score);
+          } else {
+            setOpen(true);
+          }
         } else {
-          await router.push(`/result?hasWon=${ground - character < 45}`);
+          router.push("/result");
         }
       }, 8000);
     }
   };
-
-  const [timer, setTimer] = useState(8);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (playing) setTimer((current) => current - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [playing]);
 
   return (
     <div
@@ -71,6 +87,9 @@ const PlayPage = () => {
         alt={"logo"}
         className={"max-w-lg sm:max-w-2xl -mt-24 "}
       />
+      <p className={"absolute top-[30%] text-xl"}>
+        Start when Heooow is close to the ground!
+      </p>
 
       <div
         className={"flex flex-col justify-center items-center w-full pb-10 "}
@@ -117,7 +136,13 @@ const PlayPage = () => {
           )}
         </button>
       </div>
-      <SubmitNameModal isOpen={open} setIsOpen={setOpen} hasWon={hasWon} />
+      <SubmitNameModal
+        isOpen={open}
+        name={name}
+        setName={setName}
+        score={finalScore}
+        goToResultPage={goToResultPage}
+      />
     </div>
   );
 };
