@@ -10,7 +10,6 @@ const PlayPage = () => {
   const [playing, setPlaying] = useState(false);
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
-  const [finalScore, setFinalScore] = useState(0);
 
   let audio: HTMLAudioElement;
   useEffect(() => {
@@ -60,8 +59,9 @@ const PlayPage = () => {
         audio.loop = false;
         let hasWon = ground - character < 45;
         let score = 100 - Math.floor(ground - character);
+
+        localStorage.setItem("score", String(score));
         localStorage.setItem("hasWon", String(hasWon));
-        setFinalScore(score);
 
         if (hasWon) {
           if (localStorage.getItem("name")) {
@@ -124,7 +124,7 @@ const PlayPage = () => {
 
         <button
           className={classNames(
-            playing ? "btn-outline" : "btn-primary",
+            playing ? "p-big" : "btn-primary",
             "pattern transition-all duration-300 flex flex-row gap-2 items-center justify-center"
           )}
           onClick={playGame}
@@ -140,7 +140,6 @@ const PlayPage = () => {
         isOpen={open}
         name={name}
         setName={setName}
-        score={finalScore}
         goToResultPage={goToResultPage}
       />
     </div>

@@ -23,7 +23,8 @@ module.exports = {
         'modal-border': '#2E1B50',
         'input-bg': '#221240',
         'success': '#73DC59',
-        'failure': '#EA1A5B'
+        'failure': '#EA1A5B',
+        'attention': '#FDF168'
       },
       screens: {
         'short': { 'raw': '(min-height: 820px)' },

@@ -6,18 +6,30 @@ import Emoji from "@/components/Emoji";
 import Link from "next/link";
 import useSWR from "swr";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 const Lottie = dynamic(() => import("lottie-react"));
 
-const fetcher = (url: string) => fetch(url).then(r => r.json())
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const ResultPage = () => {
-  const { data: leaderBoardData, isLoading } = useSWR(`/api/leaderBoard`, fetcher)
+  const { data: leaderBoardData, isLoading } = useSWR(
+    `/api/leaderBoard`,
+    fetcher
+  );
+  const router = useRouter();
   const [copied, setCopied] = useState(false);
   const [hasWon, setHasWon] = useState<boolean | null>(null);
+  const [score, setScore] = useState(0);
   useEffect(() => {
     setHasWon(localStorage.getItem("hasWon") === "true");
-  }, []);
+    document.body.onkeyup = function (e) {
+      if (e.key === " " || e.code === "Space") {
+        router.push("/play");
+      }
+    };
+    setScore(Number(localStorage.getItem("score")));
+  }, [router]);
 
   return (
     hasWon !== null && (
@@ -32,7 +44,9 @@ const ResultPage = () => {
           className={"max-w-lg sm:max-w-2xl -mt-24 "}
         />
 
-        {!isLoading && leaderBoardData && <LeaderBoard leaderBoardData={leaderBoardData} />}
+        {!isLoading && leaderBoardData && leaderBoardData.length > 0 && (
+          <LeaderBoard leaderBoardData={leaderBoardData} />
+        )}
 
         <div
           className={
@@ -59,7 +73,6 @@ const ResultPage = () => {
                 alt={""}
               />
               <div className={"flex flex-col h6"}>
-                <div></div>
                 <div
                   className={
                     "flex flex-row items-center justify-center sm:justify-start gap-2"
@@ -69,6 +82,7 @@ const ResultPage = () => {
                   <Emoji src={"/emojis/rock.png"} alt={"rock emoji"} />
                 </div>
                 <p className={"text-g-100"}>You nailed it buddy</p>
+                <p className={"p-big text-attention"}>{`score: ${score}/100`}</p>
               </div>
             </div>
           ) : (
@@ -97,6 +111,7 @@ const ResultPage = () => {
                     alt={"sneezingFace emoji"}
                   />
                 </div>
+                <p className={"p-big text-attention"}>{`score: ${score}/100`}</p>
               </div>
             </div>
           )}
@@ -124,12 +139,21 @@ const ResultPage = () => {
 
           <Link
             href={"/play"}
-            className={"z-20 pattern btn-primary flex flex-row items-center gap-2"}
+            className={
+              "z-20 pattern btn-primary flex flex-row items-center gap-2"
+            }
             shallow={false}
           >
             <p>Try again</p>
             <Emoji src={"/emojis/fist.png"} alt={"fist emoji"} />
           </Link>
+          <img
+            src={"/tip.png"}
+            className={
+              "transition-all duration-300 hidden sm:block max-w-[12rem] mt-4"
+            }
+            alt={"Also you can use the space bar"}
+          />
         </div>
       </div>
     )

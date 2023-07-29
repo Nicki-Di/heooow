@@ -8,7 +8,6 @@ type Props = {
   isOpen: boolean;
   name: string;
   setName: (name: string) => void;
-  score: number;
   goToResultPage: (name: string, score: number) => Promise<void>;
 };
 
@@ -16,7 +15,6 @@ const SubmitNameModal = ({
   isOpen,
   name,
   setName,
-  score,
   goToResultPage,
 }: Props) => {
   const router = useRouter();
@@ -28,7 +26,7 @@ const SubmitNameModal = ({
   const onSubmit = async () => {
     if (name) {
       localStorage.setItem("name", name)
-      await goToResultPage(name, score);
+      await goToResultPage(name, Number(localStorage.getItem("score")));
     }
   };
 
