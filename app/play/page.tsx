@@ -33,7 +33,7 @@ const PlayPage = () => {
   }, [playing]);
 
   const goToResultPage = async (name: string, score: number) => {
-    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/leaderBoard`, {
+    await fetch(`/api/leaderBoard`, {
       method: "POST",
       headers: {
         Accept: "application/json",

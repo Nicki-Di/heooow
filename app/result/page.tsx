@@ -12,7 +12,7 @@ const Lottie = dynamic(() => import("lottie-react"));
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
 const ResultPage = () => {
-  const { data: leaderBoardData, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_DOMAIN}/api/leaderBoard`, fetcher)
+  const { data: leaderBoardData, isLoading } = useSWR(`/api/leaderBoard`, fetcher)
   const [copied, setCopied] = useState(false);
   const [hasWon, setHasWon] = useState<boolean | null>(null);
   useEffect(() => {
