@@ -12,7 +12,7 @@ services:
     build:
       context: .
     volumes:
-      - heooow-volume:/usr/app/prisma
+      - heooow-volume:/app/prisma
     ports:
       # systemPort:containerPort
       - "3000:3000"
