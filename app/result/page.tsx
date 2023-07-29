@@ -82,7 +82,7 @@ const ResultPage = () => {
                   <Emoji src={"/emojis/rock.png"} alt={"rock emoji"} />
                 </div>
                 <p className={"text-g-100"}>You nailed it buddy</p>
-                <p className={"p-big text-attention"}>{`score: ${score}/100`}</p>
+                <p className={"p-big text-attention"}>{`Your score: ${score}/100`}</p>
               </div>
             </div>
           ) : (
@@ -111,7 +111,7 @@ const ResultPage = () => {
                     alt={"sneezingFace emoji"}
                   />
                 </div>
-                <p className={"p-big text-attention"}>{`score: ${score}/100`}</p>
+                <p className={"p-big text-attention"}>{`Your score: ${score}/100`}</p>
               </div>
             </div>
           )}
