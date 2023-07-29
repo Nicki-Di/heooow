@@ -58,7 +58,8 @@ const PlayPage = () => {
         setPlaying(false);
         audio.loop = false;
         let hasWon = ground - character < 45;
-        let score = 100 - Math.floor(ground - character);
+        console.log(ground - character);
+        let score = Math.floor(300 - Math.floor(ground - character)) % 100;
 
         localStorage.setItem("score", String(score));
         localStorage.setItem("hasWon", String(hasWon));
