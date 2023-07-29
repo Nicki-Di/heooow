@@ -9,7 +9,7 @@ interface LeaderBoardProps {
 
 const LeaderBoard = ({ leaderBoardData }: LeaderBoardProps) => {
   return (
-    leaderBoardData.length > 0 && <div
+    <div
       className={
         "hidden lg:flex flex-col items-center absolute top-[20%] left-8  bg-modal-bg h-fit text-g-100 rounded-3xl px-2 py-6 "
       }

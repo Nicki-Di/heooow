@@ -32,7 +32,7 @@ const ResultPage = () => {
           className={"max-w-lg sm:max-w-2xl -mt-24 "}
         />
 
-        {!isLoading && <LeaderBoard leaderBoardData={leaderBoardData} />}
+        {!isLoading && leaderBoardData && <LeaderBoard leaderBoardData={leaderBoardData} />}
 
         <div
           className={
