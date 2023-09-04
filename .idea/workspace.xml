@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cab6c82f-48db-4fc4-bda2-8a7b5b3999e6" name="Changes" comment="[feat]: some cleanups" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="com.haulmont.rcb.palette" />
+        <option value="com.haulmont.rcb.previews" />
+        <option value="com.haulmont.rcb.index" />
+        <option value="com.haulmont.rcb.useInitial" />
+        <option value="com.haulmont.rcb.README" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///pre-request-script-57dcadfc.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///pre-request-script-d2db62f8.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///test-script-57dcadfc.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///test-script-d2db62f8.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2TAJ9tiNPtg5iBw1sscYLlco9r9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowReact Palette.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Volumes/Nicky/Project/heooow",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/nick/.nvm/versions/node/v17.9.1/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "project.scopes",
+    "ts.external.directory.path": "/Volumes/Nicky/Project/heooow/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/components" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public/background" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/globals" />
+      <recent name="$PROJECT_DIR$/app/api/leaderBoard" />
+      <recent name="$PROJECT_DIR$/styles" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cab6c82f-48db-4fc4-bda2-8a7b5b3999e6" name="Changes" comment="" />
+      <created>1690479804253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690479804253</updated>
+      <workItem from="1690479806006" duration="1365000" />
+      <workItem from="1690481181448" duration="14000" />
+      <workItem from="1690481208058" duration="151000" />
+      <workItem from="1690481375055" duration="37710000" />
+      <workItem from="1690567129753" duration="17277000" />
+      <workItem from="1690620798158" duration="737000" />
+      <workItem from="1690621545101" duration="10461000" />
+      <workItem from="1690719086971" duration="48000" />
+      <workItem from="1690719147373" duration="42000" />
+      <workItem from="1690719200877" duration="364000" />
+      <workItem from="1690719608305" duration="158000" />
+      <workItem from="1690719779781" duration="235000" />
+      <workItem from="1690720019287" duration="60000" />
+    </task>
+    <task id="LOCAL-00001" summary="[feat]: init">
+      <option name="closed" value="true" />
+      <created>1690492532882</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690492532882</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[wip]: img to Image...">
+      <option name="closed" value="true" />
+      <created>1690494722673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690494722673</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[wip]: img to Image...">
+      <option name="closed" value="true" />
+      <created>1690539084694</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539084694</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[wip]: front-end...">
+      <option name="closed" value="true" />
+      <created>1690542657441</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690542657441</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[wip]: front-end...">
+      <option name="closed" value="true" />
+      <created>1690543582085</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690543582085</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[wip]: front-end...">
+      <option name="closed" value="true" />
+      <created>1690549217634</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690549217635</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[wip]: front-end...">
+      <option name="closed" value="true" />
+      <created>1690570110597</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690570110606</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[wip]: front-end...">
+      <option name="closed" value="true" />
+      <created>1690570711048</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690570711048</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[feat]: docker stuff added.">
+      <option name="closed" value="true" />
+      <created>1690572105725</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690572105725</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[wip]: docker stuff added.">
+      <option name="closed" value="true" />
+      <created>1690572353188</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690572353188</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[wip]: docker stuff added.">
+      <option name="closed" value="true" />
+      <created>1690572604809</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690572604809</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[wip]: docker stuff added.">
+      <option name="closed" value="true" />
+      <created>1690577189701</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690577189701</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[feat]: some opt">
+      <option name="closed" value="true" />
+      <created>1690580551807</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690580551807</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[feat]: some opt">
+      <option name="closed" value="true" />
+      <created>1690583616387</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1690583616387</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690609001119</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1690609001119</updated>
+    </task>
+    <task id="LOCAL-00016" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690609422283</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690609422283</updated>
+    </task>
+    <task id="LOCAL-00017" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690609646419</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690609646419</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690610317780</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690610317780</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690610655653</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690610655653</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690610739496</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1690610739496</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690613982240</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1690613982240</updated>
+    </task>
+    <task id="LOCAL-00022" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690614293811</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1690614293811</updated>
+    </task>
+    <task id="LOCAL-00023" summary="[feat]: fixing volume...">
+      <option name="closed" value="true" />
+      <created>1690614628130</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1690614628130</updated>
+    </task>
+    <task id="LOCAL-00024" summary="[feat]: compressing images...">
+      <option name="closed" value="true" />
+      <created>1690618811167</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1690618811167</updated>
+    </task>
+    <task id="LOCAL-00025" summary="[feat]: adding some fancy features...">
+      <option name="closed" value="true" />
+      <created>1690621813188</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1690621813188</updated>
+    </task>
+    <task id="LOCAL-00026" summary="[feat]: adding some fancy features...">
+      <option name="closed" value="true" />
+      <created>1690622495955</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1690622495955</updated>
+    </task>
+    <task id="LOCAL-00027" summary="[feat]: adding some fancy features...">
+      <option name="closed" value="true" />
+      <created>1690623755198</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1690623755198</updated>
+    </task>
+    <task id="LOCAL-00028" summary="[feat]: scoring system">
+      <option name="closed" value="true" />
+      <created>1690626073183</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1690626073183</updated>
+    </task>
+    <task id="LOCAL-00029" summary="[feat]: scoring system">
+      <option name="closed" value="true" />
+      <created>1690626095202</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690626095202</updated>
+    </task>
+    <task id="LOCAL-00030" summary="[feat]: some cleanups">
+      <option name="closed" value="true" />
+      <created>1690720073053</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1690720073053</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="[feat]: init" />
+    <MESSAGE value="[wip]: img to Image..." />
+    <MESSAGE value="[wip]: front-end..." />
+    <MESSAGE value="[wip]: front-end and back-end..." />
+    <MESSAGE value="[feat]: docker stuff added." />
+    <MESSAGE value="[wip]: docker stuff added." />
+    <MESSAGE value="[feat]: some opt" />
+    <MESSAGE value="[feat]: fixing volume..." />
+    <MESSAGE value="[feat]: compressing images..." />
+    <MESSAGE value="[feat]: adding some fancy features..." />
+    <MESSAGE value="[feat]: scoring system" />
+    <MESSAGE value="[feat]: some cleanups" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat]: some cleanups" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
